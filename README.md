@@ -4,7 +4,7 @@ GymPass style app
 
 ## RFs (Functional Requirements) -> application functionalities
 
-- [ ] It must be possible to register;
+- [x] It must be possible to register;
 - [ ] It must be possible to authenticate;
 - [ ] It must be possible to obtain the profile of a logged in user;
 - [ ] It must be possible to obtain the number of check-ins performed by the logged in user;
@@ -17,7 +17,7 @@ GymPass style app
 
 ## RN (Business Rules) -> paths each requirement can take
 
-- [ ] The user must not be able to register with a duplicate email;
+- [x] The user must not be able to register with a duplicate email;
 - [ ] The user cannot make two check-ins in the same day;
 - [ ] The user cannot check-in if he is not close (100m) to the gym;
 - [ ] Check-in can only be validated up to 20 minutes after creation;
@@ -26,7 +26,7 @@ GymPass style app
 
 ## RNFs (non-functional requirements) -> requirements that do not come from the client
 
-- [ ] The user's password must be encrypted;
-- [ ] The application data must be persisted in a PostgressSQL database;
+- [x] The user's password must be encrypted;
+- [x] The application data must be persisted in a PostgressSQL database;
 - [ ] All data lists need to be paginated with 20 items per page;
 - [ ] The user must be identified by a JWT (JSON Web Token);
