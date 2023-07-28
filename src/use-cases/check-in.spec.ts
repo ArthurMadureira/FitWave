@@ -4,6 +4,8 @@ import { CheckInUseCase } from './check-in'
 import { GymsRepository } from '@/repositories/gyms-repository'
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
 import { Decimal } from '@prisma/client/runtime/library'
+import { MaxNumberOfCheckInsError } from './errors/max-numbers-of-check-ins-error'
+import { MaxDistanceError } from './errors/max-distance-error'
 
 let checkInsRepository: InMemoryCheckInRepository
 let gymsRepository: GymsRepository
@@ -59,7 +61,7 @@ describe('Check-in use case', () => {
         userId: 'user-01',
         userLatitude: -1.4670579,
         userLongitude: -48.4887321,
-      })).rejects.toBeInstanceOf(Error)
+      })).rejects.toBeInstanceOf(MaxNumberOfCheckInsError)
   })
 
   it('should be able to check on twice but in different days', async () => {
@@ -104,7 +106,7 @@ describe('Check-in use case', () => {
         userId: 'user-01',
         userLatitude: -1.4670579,
         userLongitude: -48.4887321,
-      })).rejects.toBeInstanceOf(Error)
+      })).rejects.toBeInstanceOf(MaxDistanceError)
 
   })
 })
