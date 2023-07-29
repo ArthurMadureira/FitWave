@@ -5,14 +5,14 @@ import { SearchGymUseCase } from './search-gyms'
 let gymsRepository: InMemoryGymsRepository
 let sut: SearchGymUseCase
 
-describe('Search GymsUse Case', () => {
+describe('Search Gyms Use Case', () => {
   beforeEach(async () => {
     gymsRepository = new InMemoryGymsRepository()
     sut = new SearchGymUseCase(gymsRepository)
   })
 
 
-  it('should be able to search for gyms, async', async () => {
+  it('should be able to search for gyms', async () => {
     await gymsRepository.create({
       title: 'Javascript Gym',
       description: null,
