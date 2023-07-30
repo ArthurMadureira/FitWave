@@ -1,3 +1,5 @@
+import fastifyJwt from '@fastify/jwt'
+
 import Fastify from 'fastify'
 import { appRoutes } from './http/routes'
 import { ZodError } from 'zod'
@@ -7,6 +9,10 @@ import { env } from './env'
 //Repositories = Toda modificação que faremos no banco de dados
 
 export const app = Fastify()
+
+app.register(fastifyJwt, {
+  secret: env.JWT_SECRET
+})
 
 app.register(appRoutes)
 
