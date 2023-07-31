@@ -2,6 +2,24 @@
 
 GymPass style app
 
+## Test setup
+
+```sh
+cd prisma/vitest-environment-prisma
+```
+
+```
+npm link
+```
+
+```
+cd ../../
+```
+
+```
+npm link vitest-environment-prisma
+```
+
 ## RFs (Functional Requirements) -> application functionalities
 
 - [x] It must be possible to register;
